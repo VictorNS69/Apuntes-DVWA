@@ -16,12 +16,14 @@ SELECT * FROM <x> WHERE <y> LIKE '%_____%';
 
 Una manera de conocer si la DB es **vulnerable**, es poniendo en la query un `'`. Si vemos que la DB devuelve algún error, eso puede ser indicio de que es vulnerable.
 
-Es **importante** que, para que la query sea correcta sintácticamente, añadamos al principio un `'` y al final de la sentencia `--+`.
+Es **importante** que, para que la query sea correcta sintácticamente, añadamos al principio un `'` y al final de la sentencia `--+`o `#` (para comentar el resto de la query en el backend).
+
+Primero, es importante saber con cuantas **columnas** trabajamos o podemos trabajar. Para ello podemos jugar con la sentencia `ORDER BY`. 
 
 Podemos conocer el **nombre y versión** de la DB añadiendo a la query
 
 ```SQL
-UNION SELECT database(), version()
+SELECT database(), version()
 ```
 
 Para obtener **[todas las tablas](https://dev.mysql.com/doc/refman/8.0/en/tables-table.html)** de la DB, se puede hacer añadiendo la consulta:

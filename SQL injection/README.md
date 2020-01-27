@@ -33,9 +33,10 @@ Algunas de las **consultas básicas** que se usan en este tipo de ataque son:
 
 Estas inyecciones son de gran utilidad:
 
-- `version()`: muestra la version del servidor MySQL.
+- `version()` o `@@version`: muestra la version del servidor MySQL.
 - `database()`: muestra el nombre de la base de datos actual.
 - `current_user()`: muestra la el nombre de usuario y el del host para el que esta autentificada la conexión actual. Este valor corresponde a la cuenta que se usa para  evaluar los privilegios de acceso. Puede ser diferente del valor de `USER()`.
+- `@@username`: muestra el usuario actual
 - `last_insert_id()`: devuelve el último valor generado automáticamente que fue insertado en una columna de tipo `AUTO_INCREMENT`.
 - `connection_id()`: muestra la el ID de una conexión. Cada conexión tiene su propio y único identificador.
 - `@@datadir`: muestra el directorio de la base de datos.
